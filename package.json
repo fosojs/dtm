@@ -1,0 +1,33 @@
+{
+  "name": "ung-dtm",
+  "version": "0.0.0",
+  "description": "Ung dynamic tag manager.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ungjs/dtm.git"
+  },
+  "keywords": [
+    "dtm",
+    "ung",
+    "dynamic",
+    "tag",
+    "manager"
+  ],
+  "author": {
+    "name": "Zoltan Kochan",
+    "email": "zoltan.kochan@gmail.com",
+    "url": "http://kochan.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ungjs/dtm/issues"
+  },
+  "homepage": "https://github.com/ungjs/dtm#readme",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  }
+}
