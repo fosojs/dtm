@@ -1,19 +1,19 @@
 'use strict';
 
 var expect = require('chai').expect;
-var PackagesLoader = require('../lib/packages-loader');
+var Bundler = require('../lib/bundler');
 
 var ung = window.ung = {
   packages: {},
   origin: 'cdn.kochan.io'
 };
 
-describe('PackagesLoader for js', function() {
+describe('Bundler for js', function() {
   it('should compose a package link', function() {
-    var packageLoader = new PackagesLoader('js', {
+    var bundler = new Bundler('js', {
       id: 'test-1'
     });
-    packageLoader.addPackage({
+    bundler.addPackage({
       name: 'foo',
       version: '1.3.1',
       files: [
@@ -21,11 +21,11 @@ describe('PackagesLoader for js', function() {
         'foo'
       ]
     });
-    packageLoader.addPackage({
+    bundler.addPackage({
       name: 'charlie',
       version: '10.3.1'
     });
-    packageLoader.write();
+    bundler.write();
     var el = document.getElementById('test-1');
     expect(el.tagName).to.eq('SCRIPT');
     expect(el.src).to.eq('http://cdn.kochan.io/packages/foo@1.3.1!lib/bar;foo,charlie@10.3.1.js');
@@ -36,14 +36,14 @@ describe('PackagesLoader for js', function() {
     ung.packages.foo = {
       version: '43.2.1'
     };
-    var packageLoader = new PackagesLoader('js', {
+    var bundler = new Bundler('js', {
       id: 'test-2'
     });
-    packageLoader.addPackage({
+    bundler.addPackage({
       name: 'foo',
       files: ['qar']
     });
-    packageLoader.write();
+    bundler.write();
     var el = document.getElementById('test-2');
     expect(el.tagName).to.eq('SCRIPT');
     expect(el.src).to.eq('http://cdn.kochan.io/packages/foo@43.2.1!qar.js');
@@ -51,12 +51,12 @@ describe('PackagesLoader for js', function() {
   });
 });
 
-describe('PackagesLoader for css', function() {
+describe('Bundler for css', function() {
   it('should compose a package link', function() {
-    var packageLoader = new PackagesLoader('css', {
+    var bundler = new Bundler('css', {
       id: 'test-1'
     });
-    packageLoader.addPackage({
+    bundler.addPackage({
       name: 'foo',
       version: '1.3.1',
       files: [
@@ -64,11 +64,11 @@ describe('PackagesLoader for css', function() {
         'foo'
       ]
     });
-    packageLoader.addPackage({
+    bundler.addPackage({
       name: 'charlie',
       version: '10.3.1'
     });
-    packageLoader.write();
+    bundler.write();
     var el = document.getElementById('test-1');
     expect(el.tagName).to.eq('LINK');
     expect(el.href).to.eq('http://cdn.kochan.io/packages/foo@1.3.1!lib/bar;foo,charlie@10.3.1.css');

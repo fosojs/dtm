@@ -1,4 +1,4 @@
 'use strict';
 
-exports.PackagesLoader = require('./lib/packages-loader');
+exports.Bundler = require('./lib/bundler');
 exports.develop = require('./lib/develop');
