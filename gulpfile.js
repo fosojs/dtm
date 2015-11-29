@@ -1,14 +1,14 @@
 'use strict';
 
 var gulp = require('gulp');
-var foso = require('foso');
+var Foso = require('foso');
 var test = require('fosify-test');
 
 gulp.task('test', function() {
+  var foso = new Foso();
   foso
-    .please({
+    .register(test, {
       watch: true
     })
-    .fosify(test)
-    .now();
+    .then(() => foso.bundle());
 });

@@ -36,8 +36,8 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "fosify-test": "^0.4.0",
-    "foso": "^0.10.3",
+    "fosify-test": "^1.0.2",
+    "foso": "^1.0.0",
     "gulp": "^3.9.0"
   }
 }
