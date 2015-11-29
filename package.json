@@ -37,7 +37,7 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.1.18",
     "chai": "^3.4.1",
-    "fosify-test": "^1.0.2",
+    "fosify-test": "^1.0.3",
     "foso": "^1.0.0",
     "gulp": "^3.9.0"
   }
