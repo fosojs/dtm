@@ -7,8 +7,6 @@ var test = require('fosify-test');
 gulp.task('test', function() {
   var foso = new Foso();
   foso
-    .register(test, {
-      watch: true
-    })
+    .register(test)
     .then(() => foso.bundle());
 });
