@@ -3,7 +3,7 @@
 var expect = require('chai').expect;
 var Bundler = require('../lib/bundler');
 
-var ung = window.ung = {
+var cdn = window.cdn = {
   packages: {},
   origin: 'cdn.kochan.io'
 };
@@ -28,12 +28,12 @@ describe('Bundler for js', function() {
     bundler.write();
     var el = document.getElementById('test-1');
     expect(el.tagName).to.eq('SCRIPT');
-    expect(el.src).to.eq('http://cdn.kochan.io/packages/foo@1.3.1!lib/bar;foo,charlie@10.3.1.js');
+    expect(el.src).to.eq('http://cdn.kochan.io/bundle/foo@1.3.1(lib/bar+foo),charlie@10.3.1.js');
     el.parentNode.removeChild(el);
   });
 
-  it('shoud add the version from the ung object if not passed', function() {
-    ung.packages.foo = {
+  it('shoud add the version from the cdn object if not passed', function() {
+    cdn.packages.foo = {
       version: '43.2.1'
     };
     var bundler = new Bundler('js', {
@@ -46,7 +46,7 @@ describe('Bundler for js', function() {
     bundler.write();
     var el = document.getElementById('test-2');
     expect(el.tagName).to.eq('SCRIPT');
-    expect(el.src).to.eq('http://cdn.kochan.io/packages/foo@43.2.1!qar.js');
+    expect(el.src).to.eq('http://cdn.kochan.io/bundle/foo@43.2.1(qar).js');
     el.parentNode.removeChild(el);
   });
 });
@@ -71,7 +71,7 @@ describe('Bundler for css', function() {
     bundler.write();
     var el = document.getElementById('test-1');
     expect(el.tagName).to.eq('LINK');
-    expect(el.href).to.eq('http://cdn.kochan.io/packages/foo@1.3.1!lib/bar;foo,charlie@10.3.1.css');
+    expect(el.href).to.eq('http://cdn.kochan.io/bundle/foo@1.3.1(lib/bar+foo),charlie@10.3.1.css');
     el.parentNode.removeChild(el);
   });
 });
