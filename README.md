@@ -1,17 +1,17 @@
-# ung-dtm
+# foso-dtm
 
-Dynamic tag manager for pages that are loading resource from [ung server][].
+Dynamic tag manager for pages that are loading resource from [foso-cdn][].
 
 
 ## Usage example
 
-With ung dtm it is possible to load all the required resources of a page with
+With foso dtm it is possible to load all the required resources of a page with
 one request.
 
 Lets suppose a page needs to load the `foo`, `bar` packages. However,
 it also needs to load the `baz` package if the user is from a mobile device.
 
-With ung dtm, it is possible to create a Bundler object at the head of the page,
+With foso dtm, it is possible to create a Bundler object at the head of the page,
 add packages to it throughout the page and all the packages will be loaded by one
 request at the bottom of the page:
 
@@ -55,4 +55,4 @@ bottomBundler.write();
 The MIT License (MIT)
 
 
-[ung server]: https://github.com/ungjs/ung-server
+[foso-cdn]: https://github.com/fosojs/cdn

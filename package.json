@@ -1,18 +1,18 @@
 {
-  "name": "ung-dtm",
+  "name": "foso-dtm",
   "version": "0.0.0",
-  "description": "Ung dynamic tag manager.",
+  "description": "Dynamic tag manager for foso cdn.",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ungjs/dtm.git"
+    "url": "git+https://github.com/fosojs/dtm.git"
   },
   "keywords": [
     "dtm",
-    "ung",
+    "foso",
     "dynamic",
     "tag",
     "manager"
@@ -24,9 +24,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ungjs/dtm/issues"
+    "url": "https://github.com/fosojs/dtm/issues"
   },
-  "homepage": "https://github.com/ungjs/dtm#readme",
+  "homepage": "https://github.com/fosojs/dtm#readme",
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
   },
