@@ -1,6 +1,6 @@
 {
   "name": "foso-dtm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Dynamic tag manager for foso cdn.",
   "main": "index.js",
   "scripts": {
