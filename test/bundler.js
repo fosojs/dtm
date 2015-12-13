@@ -32,6 +32,22 @@ describe('Bundler for js', function() {
     el.parentNode.removeChild(el);
   });
 
+  it('should compose a package when on file is pased not in array', function() {
+    var bundler = new Bundler('js', {
+      id: 'test-one-file'
+    });
+    bundler.addPackage({
+      name: 'foo',
+      version: '1.3.1',
+      files: 'lib/bar'
+    });
+    bundler.write();
+    var el = document.getElementById('test-one-file');
+    expect(el.tagName).to.eq('SCRIPT');
+    expect(el.src).to.eq('http://cdn.kochan.io/bundle/foo@1.3.1(lib/bar).js');
+    el.parentNode.removeChild(el);
+  });
+
   it('shoud add the version from the cdn object if not passed', function() {
     cdn.packages.foo = {
       version: '43.2.1'
