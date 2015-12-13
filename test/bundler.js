@@ -102,6 +102,22 @@ describe('Bundler for js', function() {
     var el = document.getElementById('not-exists');
     expect(el).to.not.exist;
   });
+
+  it('should add each file only once', function() {
+    var bundler = new Bundler('js', {
+      id: 'each-file-once'
+    });
+    bundler.addPackage({
+      name: 'bingo',
+      version: '1.0.0',
+      files: ['foo', 'bar', 'FOO']
+    });
+    bundler.load();
+    var el = document.getElementById('each-file-once');
+    expect(el.tagName).to.eq('SCRIPT');
+    expect(el.src).to.eq('http://cdn.kochan.io/bundle/bingo@1.0.0(foo+bar).js');
+    el.parentNode.removeChild(el);
+  });
 });
 
 describe('Bundler for css', function() {
