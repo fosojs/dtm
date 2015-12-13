@@ -46,7 +46,7 @@ if (isMobile) {
 }
 
 /* somewhere at the bottom of the page */
-bottomBundler.write();
+bottomBundler.load();
 ```
 
 

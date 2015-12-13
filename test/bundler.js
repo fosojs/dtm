@@ -25,7 +25,7 @@ describe('Bundler for js', function() {
       name: 'charlie',
       version: '10.3.1'
     });
-    bundler.write();
+    bundler.load();
     var el = document.getElementById('test-1');
     expect(el.tagName).to.eq('SCRIPT');
     expect(el.src).to.eq('http://cdn.kochan.io/bundle/foo@1.3.1(lib/bar+foo),charlie@10.3.1.js');
@@ -41,7 +41,7 @@ describe('Bundler for js', function() {
       version: '1.3.1',
       files: 'lib/bar'
     });
-    bundler.write();
+    bundler.load();
     var el = document.getElementById('test-one-file');
     expect(el.tagName).to.eq('SCRIPT');
     expect(el.src).to.eq('http://cdn.kochan.io/bundle/foo@1.3.1(lib/bar).js');
@@ -59,7 +59,7 @@ describe('Bundler for js', function() {
       name: 'foo',
       files: ['qar']
     });
-    bundler.write();
+    bundler.load();
     var el = document.getElementById('test-2');
     expect(el.tagName).to.eq('SCRIPT');
     expect(el.src).to.eq('http://cdn.kochan.io/bundle/foo@43.2.1(qar).js');
@@ -87,7 +87,7 @@ describe('Bundler for js', function() {
       name: 'charlie',
       version: '10.3.1'
     });
-    bundler.write();
+    bundler.load();
     var el = document.getElementById('test-1');
     expect(el.tagName).to.eq('SCRIPT');
     expect(el.src).to.eq('http://cdn.kochan.io/bundle/foo@1.3.1(lib/bar+foo),charlie@10.3.1.js');
@@ -98,7 +98,7 @@ describe('Bundler for js', function() {
     var bundler = new Bundler('js', {
       id: 'not-exists'
     });
-    bundler.write();
+    bundler.load();
     var el = document.getElementById('not-exists');
     expect(el).to.not.exist;
   });
@@ -121,7 +121,7 @@ describe('Bundler for css', function() {
       name: 'charlie',
       version: '10.3.1'
     });
-    bundler.write();
+    bundler.load();
     var el = document.getElementById('test-1');
     expect(el.tagName).to.eq('LINK');
     expect(el.href).to.eq('http://cdn.kochan.io/bundle/foo@1.3.1(lib/bar+foo),charlie@10.3.1.css');
