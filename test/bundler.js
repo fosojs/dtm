@@ -77,6 +77,15 @@ describe('Bundler for js', function() {
     expect(el.src).to.eq('http://cdn.kochan.io/bundle/foo@1.3.1(lib/bar+foo),charlie@10.3.1.js');
     el.parentNode.removeChild(el);
   });
+
+  it('shouldn\'t add script w/o files', function() {
+    var bundler = new Bundler('js', {
+      id: 'not-exists'
+    });
+    bundler.write();
+    var el = document.getElementById('not-exists');
+    expect(el).to.not.exist;
+  });
 });
 
 describe('Bundler for css', function() {
