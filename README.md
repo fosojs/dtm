@@ -1,5 +1,7 @@
 # foso-dtm
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fosojs/dtm.svg)](https://greenkeeper.io/)
+
 Dynamic tag manager for pages that are loading resource from [foso-cdn][].
 
 
