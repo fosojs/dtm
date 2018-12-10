@@ -38,7 +38,7 @@
     "chai": "^4.0.1",
     "fosify-test": "^1.0.4",
     "foso": "^1.0.0",
-    "gulp": "^3.9.0"
+    "gulp": "^4.0.0"
   },
   "babel": {
     "presets": [
